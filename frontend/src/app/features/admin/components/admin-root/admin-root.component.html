@@ -1,0 +1,39 @@
+<mat-toolbar color="primary" *transloco="let t; read:'admin-root'">
+  <div class="menu-group">
+    <ng-container *ngIf="(currentUser$ | async)?.role === roles.SystemAdmin">
+      <button mat-icon-button [routerLink]="adminRoutes.Settings">
+        <mat-icon>settings</mat-icon>
+      </button>
+      <button mat-icon-button [routerLink]="adminRoutes.EventDisplay">
+        <mat-icon>calendar_today</mat-icon>
+      </button>
+    </ng-container>
+  </div>
+  <div class="title">
+    <h1 class="white">{{t("title")}}</h1>
+  </div>
+  <div class="menu-group">
+    <button
+      class="language-button"
+      mat-flat-button
+      color="primary"
+      (click)="changeLanguage()"
+    >
+      <mat-icon>language</mat-icon>
+      <mat-label>{{currentLanguage}}</mat-label>
+    </button>
+    <button
+      mat-icon-button
+      (click)="openEditorDialog()"
+    >
+      <mat-icon>person</mat-icon>
+    </button>
+    <button
+      mat-icon-button
+      [routerLink]="appRoutes.EventDisplay"
+    >
+      <mat-icon>logout</mat-icon>
+    </button>
+  </div>
+</mat-toolbar>
+<router-outlet></router-outlet>

@@ -1,0 +1,57 @@
+<div class="container" *transloco="let t; read:'login-component'">
+  <mat-card>
+    <mat-card-header>
+        <mat-card-title>
+          <img mat-card-image src="../../../assets/img/hollo_logo.png" width="100px" height="100px" alt="hollo_logo">
+        </mat-card-title>
+        <mat-card-subtitle>
+          {{t("administrator_title")}} <br> {{t("login_title")}}
+        </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <form
+        [formGroup]="formGroup"
+        (keyup.enter)="login()"
+      >
+        <mat-form-field hideRequiredMarker="true">
+          <mat-label>{{t("username")}}</mat-label>
+          <input
+            matInput
+            type="text"
+            [formControl]="formGroup.controls.username"
+          >
+        </mat-form-field>
+        <mat-form-field hideRequiredMarker="true">
+          <mat-label>{{t("password")}}</mat-label>
+          <input
+            matInput
+            [type]="showPassword ? 'text' : 'password'"
+            [formControl]="formGroup.controls.password"
+          >
+          <mat-icon matSuffix (click)="togglePasswordVisibility()">
+            {{showPassword ? 'visibility_off' : 'visibility'}}
+          </mat-icon>
+        </mat-form-field>
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <button class="login-button"
+              mat-raised-button
+              color="primary"
+              [disabled]="formGroup.invalid"
+              (click)="login()"
+      >
+        {{t("login_button")}}
+        <mat-icon>exit_to_app</mat-icon>
+      </button>
+      <button class="language-button"
+              mat-raised-button
+              color="primary"
+              (click)="changeLanguage()"
+      >
+        <mat-label>{{currentLanguage}}</mat-label>
+        <mat-icon>language</mat-icon>
+      </button>
+    </mat-card-actions>
+  </mat-card>
+</div>

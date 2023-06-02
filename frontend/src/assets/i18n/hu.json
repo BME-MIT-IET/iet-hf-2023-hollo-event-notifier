@@ -1,0 +1,53 @@
+{
+  "event-display-dialog": {
+    "has_points": "Pontot ér",
+    "organizer": "Szervező",
+    "place": "Hely"
+  },
+  "login-component": {
+    "administrator_title" : "ADMINISZTRÁTOR",
+    "login_title" : "BEJELENTKEZÉS",
+    "username": "Felhasználónév",
+    "password": "Jelszó",
+    "login_button": "Bejelentkezés"
+  },
+  "admin-root": {
+    "settings": "Beállitások",
+    "events": "Események",
+    "logout": "Kijelentkezés",
+    "title": "Hollóhír Admin"
+  },
+  "event-editor-dialog": {
+    "create_event" : "Esemény létrehozása",
+    "update_event" : "Esemény szerkesztése",
+    "title" : "Cím",
+    "place" : "Hely",
+    "organizer": "Szervező",
+    "start_date" : "Kezdési időpont",
+    "end_date" : "Befejezés időpont",
+    "has_points" : "Pontot ér",
+    "required_field": "A mező kitöltése kötelező",
+    "invalid_url" : "Nem érvényes URL"
+  },
+  "user-editor-dialog": {
+    "title": "Felhasználó szerkesztése",
+    "username": "Felhasználónév",
+    "required_error": "Ez egy kötelező mező!",
+    "email_format_error": "Érvénytelen e-mail formátum!",
+    "role": "Szerep"
+  },
+  "settings": {
+    "user_settings_title": "Felhasználók kezelése",
+    "edit": "Szerkesztés",
+    "delete": "Törlés"
+  },
+  "user-creator-dialog": {
+    "title": "Felhasználó létrehozása",
+    "username": "Felhasnzálónév",
+    "required_error": "Ez egy kötelező mező!",
+    "email_format_error": "Érvénytelen e-mail formátum!",
+    "role": "Szerep",
+    "password": "Jelszó",
+    "password_format_error": "A jelszó nem elég bonyolult! Kérlek használj kis- és nagybetűket és számokat."
+  }
+}

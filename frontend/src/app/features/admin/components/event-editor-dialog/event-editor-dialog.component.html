@@ -1,0 +1,84 @@
+<div class="container" *transloco="let t; read:'event-editor-dialog'">
+  <mat-dialog-actions>
+    <h1>
+      <ng-container *ngIf="data.mode === editorMode.Create">{{t('create_event')}}</ng-container>
+      <ng-container *ngIf="data.mode === editorMode.Update">{{t('update_event')}}</ng-container>
+    </h1>
+    <div class="actions-container">
+      <button mat-icon-button (click)="onCancel()">
+        <mat-icon>cancel</mat-icon>
+      </button>
+      <button mat-icon-button (click)="onDelete()" *ngIf="data.mode === editorMode.Update">
+        <mat-icon>delete</mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        (click)="onSave()"
+        [disabled]="!formGroup.valid"
+      >
+        <mat-icon>done</mat-icon>
+      </button>
+    </div>
+  </mat-dialog-actions>
+  <mat-dialog-content>
+    <form [formGroup]="formGroup">
+      <mat-form-field>
+        <mat-label>{{t('title')}}</mat-label>
+        <input
+          matInput
+          type="text"
+          [formControl]="formGroup.controls.title"
+        >
+        <mat-error *ngIf="formGroup.controls.title.hasError('required')">{{t('required_field')}}</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>{{t('place')}}</mat-label>
+        <input
+          matInput
+          type="text"
+          [formControl]="formGroup.controls.place"
+        >
+        <mat-error *ngIf="formGroup.controls.title.hasError('required')">{{t('required_field')}}</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>{{t('organizer')}}</mat-label>
+        <input
+          matInput
+          type="text"
+          [formControl]="formGroup.controls.organizer"
+        >
+        <mat-error *ngIf="formGroup.controls.organizer.hasError('required')">{{t('required_field')}}</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>{{t('start_date')}}</mat-label>
+        <input
+          matInput
+          type="text"
+          [formControl]="formGroup.controls.startDate"
+        >
+        <mat-error *ngIf="formGroup.controls.startDate.hasError('required')">{{t('required_field')}}</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>{{t('end_date')}}</mat-label>
+        <input
+          matInput
+          type="text"
+          [formControl]="formGroup.controls.endDate"
+        >
+        <mat-error *ngIf="formGroup.controls.endDate.hasError('required')">{{t('required_field')}}</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Link</mat-label>
+        <input
+          matInput
+          type="text"
+          [formControl]="formGroup.controls.link"
+        >
+        <mat-error *ngIf="formGroup.controls.link.hasError('pattern')">{{t('invalid_url')}}</mat-error>
+      </mat-form-field>
+      <mat-checkbox [formControl]="formGroup.controls.hasPoints">
+        {{t('has_points')}}
+      </mat-checkbox>
+    </form>
+  </mat-dialog-content>
+</div>
